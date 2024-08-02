@@ -14,13 +14,13 @@
 			margin: auto;
 		}
 	</style>
-	<script src="../phaser.min.js"></script>
+	<script src="phaser.min.js"></script>
 </head>
 <body>
 	<div id="container"></div>
 	<script>
 	onload=function(){
-		
+
 		var startText;
 		var restartText;
 		var welcome;
@@ -50,7 +50,7 @@
 				game.load.image('rock','assets/backgrounds/rock.png');
 				game.load.spritesheet('tower','assets/backgrounds/tower.png',139,261.5);
 				game.load.spritesheet('stones','assets/backgrounds/stones.png',170,128);
-				////////////////////////////////////////////////////////////////////////双方士兵			
+				////////////////////////////////////////////////////////////////////////双方士兵
 				for(var i=1; i<=18; i++) {
 					game.load.image('m1_' + i,'assets/sprites/m1/' + i + '.png');
 					game.load.image('m2_' + i,'assets/sprites/m2/' + i + '.png');
@@ -146,7 +146,7 @@
 					s2_[i]= game.add.sprite(-100,0,'s2_' + (i+1));
 					s3_[i]= game.add.sprite(-100,0,'s3_' + (i+1));
 				}
-				
+
 				var sky = game.add.tileSprite(0, 0, 335, 87, 'sky').autoScroll(9,0);//天空动态
 
 				var back = game.add.image(0,0,'back');//战场背景
@@ -431,8 +431,8 @@
 						document.title = m2_count;
 					}, this);
 					walking=true;
-					walkmoving=true;	
-					s3_m_i=5;	
+					walkmoving=true;
+					s3_m_i=5;
 					m2_d_i=14;
 				}, null, this);
 				game.physics.arcade.collide(s1, m3, function(s1,m3){
@@ -454,8 +454,8 @@
 						document.title = m3_count;
 					}, this);
 					walking=true;
-					walkmoving=true;	
-					s1_m_i=5;	
+					walkmoving=true;
+					s1_m_i=5;
 					m3_d_i=14;
 				}, null, this);
 				game.physics.arcade.collide(s2, m1, function(s2,m1){
@@ -477,8 +477,8 @@
 						document.title = m1_count;
 					}, this);
 					walking=true;
-					walkmoving=true;	
-					s2_m_i=5;	
+					walkmoving=true;
+					s2_m_i=5;
 					m1_d_i=14;
 				}, null, this);
 				game.physics.arcade.collide(m3, s2, function(m3,s2){
@@ -498,8 +498,8 @@
 						s2.destroy()
 					}, this);
 					walking=true;
-					walkmoving=true;	
-					m3_m_i=5;	
+					walkmoving=true;
+					m3_m_i=5;
 					s2_d_i=14;	}, null, this);
 				game.physics.arcade.collide(m1, s3, function(m1,s3){
 					walking=false;
@@ -518,9 +518,9 @@
 						s3.destroy()
 					}, this);
 					walking=true;
-					walkmoving=true;	
-					m1_m_i=5;	
-					s3_d_i=14;			
+					walkmoving=true;
+					m1_m_i=5;
+					s3_d_i=14;
 				}, null, this);
 				game.physics.arcade.collide(m2, s1, function(m2,s1){
 					walking=false;
@@ -539,9 +539,9 @@
 						s1.destroy()
 					}, this);
 					walking=true;
-					walkmoving=true;	
-					m2_m_i=5;	
-					s1_d_i=14;	
+					walkmoving=true;
+					m2_m_i=5;
+					s1_d_i=14;
 				}, null, this);
 
 				if (walkmoving==false) {return false;}//双方停止脚步 以上可播放攻击、死亡动画

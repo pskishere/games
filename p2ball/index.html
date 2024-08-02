@@ -3,7 +3,7 @@
 <head>
     <title>P2物理弹球</title>
     <meta charset="utf-8">
-    <script src="../phaser.min.js"></script>
+    <script src="phaser.min.js"></script>
 	<style type="text/css">
 	body {margin: 0;padding: 0;	}
 	canvas {margin: 0 auto;position: relative;left:0;top:0;}
@@ -53,7 +53,7 @@ var GameState = function(game){
 	};
 
 	this.create = function(){
-		game.physics.startSystem(Phaser.Physics.P2JS); 
+		game.physics.startSystem(Phaser.Physics.P2JS);
 		game.physics.p2.gravity.y = 1000;
 
 		ballMaterial = game.physics.p2.createMaterial('ballMaterial');
@@ -82,7 +82,7 @@ var GameState = function(game){
 
 		// Ground
 		var ground = game.add.tileSprite(game.world.centerX, game.height-30, game.width, 60, "ground");
-		game.physics.p2.enable(ground);  
+		game.physics.p2.enable(ground);
 		ground.body.static = true;
 		ground.body.onBeginContact.add(function(b1,b2){
 			if(b1 && b1.sprite.key == "ball"){

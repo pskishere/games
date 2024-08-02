@@ -13,7 +13,7 @@
             margin: 0 auto;
         }
     </style>
-    <script src="../phaser.min.js"></script>
+    <script src="js/phaser.min.js"></script>
 </head>
 <body>
     <div id="game">
@@ -47,7 +47,7 @@
                 // take viewport width as base value
                 content.style.height = viewport_h + "px";
                 content.style.width  = (viewport_h * gameBestRatio) + "px";
-            } 
+            }
 
             var game = new Phaser.Game(gameBestWidth, gameBestHeight, Phaser.CANVAS , "content");
             game.state.add('Boot', boot);
