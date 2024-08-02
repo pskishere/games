@@ -19,6 +19,7 @@ MyGame.Game.prototype = {
 			game.circleGraphics.generateTexture()
 		);
 		this.circle.anchor.set(0.5);
+		this.circle.scale.set(0.8); // 缩小圆圈的尺寸为 50%
 
 		// 调整分数文字大小以适应不同屏幕
 		var scoreFontSize = Math.min(game.world.height / 4, 238);
@@ -102,6 +103,7 @@ MyGame.Game.prototype = {
 			.to({ alpha: 0 }, 1000, 'Linear', true)
 			.onComplete.add(function () {
 				this.bird.kill();
+				this.state.start('Boot'); // 跳转到 Boot 状态
 			}, this);
 	},
 

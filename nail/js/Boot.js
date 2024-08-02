@@ -14,6 +14,7 @@ MyGame.Boot.prototype = {
 		// 设置游戏尺寸为屏幕尺寸
 		this.scale.setGameSize(window.innerWidth, window.innerHeight);
 
+
 		// 禁用任何可能的内边距
 		this.scale.pageAlignHorizontally = false;
 		this.scale.pageAlignVertically = false;
